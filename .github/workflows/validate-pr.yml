@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
+          allow-unsafe-pr-checkout: true
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Check Commit Message Format
@@ -39,6 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
+          allow-unsafe-pr-checkout: true
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Set up Python
         uses: actions/setup-python@v6
